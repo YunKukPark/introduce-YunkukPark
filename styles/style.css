@@ -59,6 +59,11 @@ li {
   padding: 0;
 }
 
+/* Landing Section Control */
+#show-scene #scroll-section .sticky-elem {
+  display: block;
+}
+
 /* LOCAL NAV */
 .lnb {
   height: 52px;
@@ -115,6 +120,14 @@ li {
   font-weight: 700;
   text-align: center;
   line-height: 1.2;
+}
+
+.sticky-elem {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .desc-message {
