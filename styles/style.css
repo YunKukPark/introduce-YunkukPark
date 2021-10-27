@@ -38,6 +38,32 @@ li {
   color: #191a20;
 }
 
+/* container 영역 수정 */
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 1030px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1030px;
+  }
+}
+
+.col-fulid {
+  padding: 0;
+}
+
 /* LOCAL NAV */
 .lnb {
   height: 52px;
@@ -66,4 +92,8 @@ li {
 
 .local-nav-item a:not(.logo) {
   margin-left: 2em;
+}
+
+.test {
+  background-color: hotpink;
 }
