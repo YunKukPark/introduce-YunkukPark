@@ -1,12 +1,69 @@
+@charset 'utf-8';
+
 /* font Reset */
+/* Default color : #191a20*/
+/* gray-scales
+$black: #000;
+$secondary: #8c8d96;
+$tertiary: #b2b3b9;
+$border: #e0e2e7;
+$background: #f7f8fa;
+$white: #fff; 
+*/
+
+body {
+  overflow-x: hidden;
+}
 
 body,
 button,
 input,
 textarea {
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.05em;
+  color: #191a20;
+}
+
+p {
+  line-height: 1.6;
+}
+
+li {
+  display: block;
 }
 
 .title {
   font-family: 'Black Han Sans', sans-serif;
+  color: #191a20;
+}
+
+/* LOCAL NAV */
+.lnb {
+  height: 52px;
+  border-bottom: 1px solid #ddd;
+}
+.local-nav-list {
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.local-nav-item:first-child {
+  margin-right: auto;
+}
+
+.locac-nav-item a {
+  font-size: 0.8rem;
+}
+
+.local-nav-item .logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.local-nav-item a:not(.logo) {
+  margin-left: 2em;
 }
