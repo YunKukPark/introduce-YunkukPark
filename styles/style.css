@@ -1,0 +1,12 @@
+/* font Reset */
+
+body,
+button,
+input,
+textarea {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.title {
+  font-family: 'Black Han Sans', sans-serif;
+}
