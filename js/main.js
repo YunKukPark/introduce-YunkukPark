@@ -19,8 +19,12 @@
         messageD: document.querySelector('#scroll-section-0 .landing-message.d'),
         messageE: document.querySelector('#scroll-section-0 .landing-message.e'),
         messageF: document.querySelector('#scroll-section-0 .desc-message.f'),
+        canvas: document.querySelector('#video-canvas-0'),
+        context: document.querySelector('#video-canvas-0').getContext('2d'),
+        videoImages: [],
       },
       values: {
+        //MESSAGE
         messageA_opacity_in: [0, 1, { start: 0.05, end: 0.1 }],
         messageA_translateY_in: [20, 0, { start: 0.05, end: 0.1 }],
 
@@ -56,6 +60,10 @@
 
         messageF_opacity_out: [1, 0, { start: 0.87, end: 0.92 }],
         messageF_translateY_out: [0, -50, { start: 0.87, end: 0.92 }],
+
+        //IMAGE
+        videoImageCount: 300,
+        imageSequence: [0, 299],
       },
     },
     {
@@ -79,6 +87,16 @@
       },
     },
   ];
+
+  function setCanvasImages() {
+    let imgElem;
+    for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
+      imgElem = new Image();
+      imgElem.src = `./assets/video/001/IMG_${6726 + i}.JPG`;
+      sceneInfo[0].objs.videoImages.push(imgElem);
+    }
+  }
+  setCanvasImages();
 
   function setLayout() {
     // 섹션 높이 셋팅
@@ -126,7 +144,6 @@
       rv = scrollRatio * (values[1] - values[0]) + values[0];
     }
 
-    console.log(rv);
     return rv;
   }
 
@@ -139,6 +156,9 @@
 
     switch (currentScene) {
       case 0:
+        let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
+        objs.context.drawImage(objs.videoImages[sequence], 0, 0);
+
         //TODO: 같은 동작을 하는게 여러개니까 argument를 받아 뱉어주는 함수 만들기
         // argument 는 A,B,C 어떤것인지 & scrollRation 값
         //A
