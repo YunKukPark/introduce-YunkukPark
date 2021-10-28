@@ -11,10 +11,6 @@ $background: #f7f8fa;
 $white: #fff; 
 */
 
-section {
-  border: 2px solid hotpink;
-}
-
 body {
   overflow-x: hidden;
 }
@@ -77,11 +73,24 @@ li {
   top: 15%;
   left: 15%;
 }
+
+/* Canvas */
+.sticky-elem-canvas {
+  top: 0;
+  height: 100%;
+}
+
+.sticky-elem-canvas canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
 /* LOCAL NAV */
 .lnb {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
   width: 100%;
   height: 52px;
   padding: 0 1rem;
