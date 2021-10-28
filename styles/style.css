@@ -11,6 +11,10 @@ $background: #f7f8fa;
 $white: #fff; 
 */
 
+section {
+  border: 2px solid hotpink;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -64,6 +68,15 @@ li {
   display: block;
 }
 
+#scroll-section-0 .desc-message.c {
+  top: 10%;
+  left: 40%;
+}
+
+#scroll-section-0 .desc-message.f {
+  top: 15%;
+  left: 45%;
+}
 /* LOCAL NAV */
 .lnb {
   position: absolute;
@@ -116,6 +129,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 35vh;
   opacity: 0;
   height: 3em;
   font-size: 2.5rem;
@@ -130,7 +144,6 @@ li {
 .sticky-elem {
   display: none;
   position: fixed;
-  top: 0;
   left: 0;
   width: 100%;
 }
@@ -145,6 +158,10 @@ li {
   width: 1px;
   height: 50px;
   background-color: #191a20;
+}
+
+.linked-in {
+  padding-top: 50vh;
 }
 
 .footer {
@@ -170,6 +187,15 @@ li {
 
   .desc-message {
     font-size: 1.2rem;
-    width: 20%;
+    width: 50%;
+  }
+
+  #scroll-section-0 .desc-message.c {
+    top: 20%;
+    left: 53%;
+  }
+
+  #scroll-section-0 .desc-messgae.f {
+    left: 55%;
   }
 }
