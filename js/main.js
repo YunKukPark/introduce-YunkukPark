@@ -64,6 +64,9 @@
         //IMAGE
         videoImageCount: 300,
         imageSequence: [0, 299],
+
+        // Canvas
+        canvas_opacity: [1, 0, { start: 0.9, end: 1 }],
       },
     },
     {
@@ -96,7 +99,6 @@
       sceneInfo[0].objs.videoImages.push(imgElem);
     }
   }
-  setCanvasImages();
 
   function setLayout() {
     // 섹션 높이 셋팅
@@ -106,6 +108,7 @@
       } else if (scene.type === 'normal') {
         scene.scrollHeight = scene.objs.container.offsetHeight;
       }
+
       scene.objs.container.style.height = `${scene.scrollHeight}px`;
     });
 
@@ -118,8 +121,11 @@
         break;
       }
     }
+    document.body.setAttribute('id', `show-scene-${currentScene}`);
 
     const heightRatio = window.innerHeight / 1080;
+
+    // Canvas 크기 조절
     sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%,-50%,0) scale(${heightRatio})`;
   }
 
@@ -161,6 +167,7 @@
       case 0:
         let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
         objs.context.drawImage(objs.videoImages[sequence], 0, 0);
+        objs.canvas.style.opacity = calcValues(values.canvas_opacity, currentYOffset);
 
         //TODO: 같은 동작을 하는게 여러개니까 argument를 받아 뱉어주는 함수 만들기
         // argument 는 A,B,C 어떤것인지 & scrollRation 값
@@ -283,26 +290,33 @@
     if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
       enterNewScene = true;
       currentScene++;
+      document.body.setAttribute('id', `show-scene-${currentScene}`);
     }
 
     if (yOffset < prevScrollHeight) {
       enterNewScene = true;
       if (currentScene === 0) return;
       currentScene--;
+      document.body.setAttribute('id', `show-scene-${currentScene}`);
     }
-    document.body.setAttribute('id', `show-scene-${currentScene}`);
 
     if (enterNewScene) return; // 새로운 씬에 들어왔을 때 음수값 나오는 버그 수정
+
     playAnimation();
   }
 
+  setCanvasImages();
   // 세로 창이 변화되면 Layout 재설정
-  window.addEventListener('resize', setLayout);
-  window.addEventListener('load', setLayout);
+  window.addEventListener('load', () => {
+    setLayout();
+    // TODO: 시작하자 마자 이미지가 올라와야 되는데 버그가 있음 고쳐야함. => setCanvasImages 가 먼저 선언되었어야함.
+    sceneInfo[0].objs.context.drawImage(sceneInfo[0].objs.videoImages[0], 0, 0);
+  });
   window.addEventListener('scroll', () => {
     yOffset = window.pageYOffset;
     scrollLoop();
   });
+  window.addEventListener('resize', setLayout);
 
   setLayout();
 })();
