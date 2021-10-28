@@ -60,12 +60,16 @@ li {
 }
 
 /* Landing Section Control */
-#show-scene #scroll-section .sticky-elem {
+#show-scene-0 #scroll-section-0 .sticky-elem {
   display: block;
 }
 
 /* LOCAL NAV */
 .lnb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 52px;
   padding: 0 1rem;
   border-bottom: 1px solid #ddd;
@@ -112,6 +116,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
   height: 3em;
   font-size: 2.5rem;
 }
@@ -133,6 +138,7 @@ li {
 .desc-message {
   width: 70%;
   font-weight: 700;
+  opacity: 0;
 }
 
 .pin {
@@ -150,7 +156,7 @@ li {
 }
 
 .test {
-  background-color: hotpink;
+  font-size: 1.2em;
 }
 
 @media screen and (min-width: 1024px) {
