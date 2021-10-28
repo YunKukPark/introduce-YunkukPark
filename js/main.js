@@ -19,6 +19,7 @@
         messageD: document.querySelector('#scroll-section-0 .landing-message.d'),
         messageE: document.querySelector('#scroll-section-0 .landing-message.e'),
         messageF: document.querySelector('#scroll-section-0 .desc-message.f'),
+        messageG: document.querySelector('#scroll-section-0 .landing-message.g'),
         canvas: document.querySelector('#video-canvas-0'),
         context: document.querySelector('#video-canvas-0').getContext('2d'),
         videoImages: [],
@@ -60,6 +61,12 @@
 
         messageF_opacity_out: [1, 0, { start: 0.87, end: 0.92 }],
         messageF_translateY_out: [0, -50, { start: 0.87, end: 0.92 }],
+
+        messageG_opacity_in: [0, 1, { start: 0.92, end: 0.95 }],
+        messageG_translateY_in: [50, 0, { start: 0.92, end: 0.95 }],
+
+        messageG_opacity_out: [1, 0, { start: 0.97, end: 1 }],
+        messageG_translateY_out: [0, -50, { start: 0.97, end: 1 }],
 
         //IMAGE
         videoImageCount: 300,
@@ -271,6 +278,23 @@
 
           objs.messageF.style.opacity = messageF_opacity_out;
           objs.messageF.style.transform = `translateY(${messageF_translateY_out}%)`;
+        }
+
+        //G
+        if (scrollRatio <= 0.96) {
+          // in
+          const messageG_opacity_in = calcValues(values.messageG_opacity_in, currentYOffset);
+          const messageG_translateY_in = calcValues(values.messageG_translateY_in, currentYOffset);
+
+          objs.messageG.style.opacity = messageG_opacity_in;
+          objs.messageG.style.transform = `translateY(${messageG_translateY_in}%)`;
+        } else {
+          // out
+          const messageG_opacity_out = calcValues(values.messageG_opacity_out, currentYOffset);
+          const messageG_translateY_out = calcValues(values.messageG_translateY_out, currentYOffset);
+
+          objs.messageG.style.opacity = messageG_opacity_out;
+          objs.messageG.style.transform = `translateY(${messageG_translateY_out}%)`;
         }
         break;
       case 1:
