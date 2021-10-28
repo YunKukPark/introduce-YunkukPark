@@ -70,12 +70,12 @@ li {
 
 #scroll-section-0 .desc-message.c {
   top: 10%;
-  left: 40%;
+  left: 20%;
 }
 
 #scroll-section-0 .desc-message.f {
   top: 15%;
-  left: 45%;
+  left: 15%;
 }
 /* LOCAL NAV */
 .lnb {
@@ -133,6 +133,7 @@ li {
   opacity: 0;
   height: 3em;
   font-size: 2.5rem;
+  word-break: keep-all;
 }
 
 .landing-message p {
@@ -192,10 +193,10 @@ li {
 
   #scroll-section-0 .desc-message.c {
     top: 20%;
-    left: 53%;
+    left: 45%;
   }
 
-  #scroll-section-0 .desc-messgae.f {
-    left: 55%;
+  #scroll-section-0 .desc-message.f {
+    left: 35%;
   }
 }
