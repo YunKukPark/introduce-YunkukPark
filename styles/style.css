@@ -96,6 +96,18 @@ li {
   padding: 0 1rem;
   border-bottom: 1px solid #ddd;
 }
+
+.local-nav-sticky .lnb {
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.1);
+  /* for iPhone */
+  -webkit-backdrop-filter: saturate(180%) blur(15px);
+  -moz-backdrop-filter: saturate(180%) blur(15px);
+  -o-backdrop-filter: saturate(180%) blur(15px);
+  backdrop-filter: saturate(180%) blur(15px);
+}
+
 .local-nav-list {
   display: flex;
   align-items: center;
@@ -127,6 +139,9 @@ li {
 }
 
 .landing .title-message {
+  position: relative;
+  top: -10vh;
+  z-index: 5;
   font-family: 'Black Han Sans', sans-serif;
   font-size: 4rem;
   color: #191a20;
