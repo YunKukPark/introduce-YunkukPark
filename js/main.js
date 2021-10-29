@@ -77,20 +77,20 @@
       },
     },
     {
-      // 1 - Linked In Section
+      // 1 - Hello World Section
       idx: 1,
       type: 'normal',
-      heightNum: 1, // 브라우저 높이의 5배로 scrollHeight 세팅
+      heightNum: 1,
       scrollHeight: 0,
       objs: {
         container: document.querySelector('#scroll-section-1'),
       },
     },
     {
-      // 2 - form Section
+      // 2 - Linked In
       idx: 2,
       type: 'normal',
-      heightNum: 1, // 브라우저 높이의 5배로 scrollHeight 세팅
+      heightNum: 1,
       scrollHeight: 0,
       objs: {
         container: document.querySelector('#scroll-section-2'),
