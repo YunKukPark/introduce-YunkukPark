@@ -102,7 +102,7 @@
     let imgElem;
     for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
       imgElem = new Image();
-      imgElem.src = `./assets/video/001/IMG_${6726 + i}.JPG`;
+      imgElem.src = `./assets/video/002/IMG_7574${i}.png`;
       sceneInfo[0].objs.videoImages.push(imgElem);
     }
   }
@@ -173,7 +173,7 @@
     switch (currentScene) {
       case 0:
         let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
-        objs.context.drawImage(objs.videoImages[sequence], 0, 0);
+        objs.context.drawImage(objs.videoImages[sequence], 0, 0, 1920, 1080);
         objs.canvas.style.opacity = calcValues(values.canvas_opacity, currentYOffset);
 
         //TODO: 같은 동작을 하는게 여러개니까 argument를 받아 뱉어주는 함수 만들기
@@ -334,7 +334,7 @@
   window.addEventListener('load', () => {
     setLayout();
     // TODO: 시작하자 마자 이미지가 올라와야 되는데 버그가 있음 고쳐야함. => setCanvasImages 가 먼저 선언되었어야함.
-    sceneInfo[0].objs.context.drawImage(sceneInfo[0].objs.videoImages[0], 0, 0);
+    sceneInfo[0].objs.context.drawImage(sceneInfo[0].objs.videoImages[0], 0, 0, 1920, 1080);
   });
   window.addEventListener('scroll', () => {
     yOffset = window.pageYOffset;
