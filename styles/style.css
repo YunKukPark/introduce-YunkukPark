@@ -399,7 +399,7 @@ body.before-load {
 
 #send-form .send-button:disabled {
   opacity: 0.4;
-  cursor: disabled;
+  cursor: not-allowed;
 }
 
 #send-form .send-button:hover {
