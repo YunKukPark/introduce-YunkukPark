@@ -3,6 +3,10 @@
 
   const sendButton = document.querySelector('#send-button');
   const sendForm = document.querySelector('#send-form');
+  const inputs = {
+    fromName: document.querySelector('#from_name'),
+    message: document.querySelector('#message'),
+  };
 
   sendForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -14,11 +18,10 @@
 
     const templateParams = {
       to_name: 'Yunkuk Park',
-      message: document.querySelector('#message').value,
-      from_name: document.querySelector('#from_name').value,
+      message: inputs.message.value,
+      from_name: inputs.fromName.value,
     };
 
-    console.log(templateParams);
     emailjs.send(serviceID, templateID, templateParams).then(
       function (response) {
         sendButton.value = 'Send Email';
@@ -32,4 +35,22 @@
       }
     );
   });
+
+  sendForm.addEventListener('keydown', buttonHandler);
+
+  function buttonHandler() {
+    // TODO: 0이 되었음에도 한번 더 키 입력이 되야지 disabled 되는 이슈가 있음.
+    let buttonSwitch = false;
+    if (inputs.fromName.value.length !== 0 && inputs.message.value.length !== 0) {
+      buttonSwitch = true;
+    } else if (inputs.fromName.value.length !== 0 && inputs.message.value.length !== 0) {
+      buttonSwitch = false;
+    }
+
+    if (buttonSwitch) {
+      sendButton.disabled = false;
+    } else {
+      sendButton.disabled = true;
+    }
+  }
 })();
