@@ -1,16 +1,5 @@
 @charset 'utf-8';
 
-/* font Reset */
-/* Default color : #191a20*/
-/* gray-scales
-$black: #000;
-$secondary: #8c8d96;
-$tertiary: #b2b3b9;
-$border: #e0e2e7;
-$background: #f7f8fa;
-$white: #fff; 
-*/
-
 body {
   overflow-x: hidden;
 }
@@ -100,7 +89,7 @@ li {
 .local-nav-sticky .lnb {
   position: fixed;
   top: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.7);
   /* for iPhone */
   -webkit-backdrop-filter: saturate(180%) blur(15px);
   -moz-backdrop-filter: saturate(180%) blur(15px);
@@ -133,18 +122,18 @@ li {
   margin-left: 2em;
 }
 
-/* Scroll Section */
+/* Scroll Section 0 */
 .scroll-section {
   padding-top: 50vh;
 }
 
 .landing .title-message {
   position: relative;
-  top: -10vh;
+  top: 20vh;
   z-index: 5;
   font-family: 'Black Han Sans', sans-serif;
   font-size: 4rem;
-  color: #191a20;
+  color: #fffafa;
   text-align: center;
   /* TODO: 약간 블러처리가 된 그림자 넣기 */
 }
@@ -153,21 +142,25 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 35vh;
+  top: 60vh;
   opacity: 0;
   height: 3em;
   font-size: 2.5rem;
   word-break: keep-all;
 }
 
-.landing-message.g {
-  top: 80vh;
+.landing-message.g .title-message {
+  top: 10vh;
+  color: #191a20;
 }
 
 .landing-message p {
   font-weight: 700;
   text-align: center;
   line-height: 1.2;
+  letter-spacing: -0.03em;
+
+  color: #fffafa;
 }
 
 .sticky-elem {
@@ -181,13 +174,15 @@ li {
   width: 70%;
   font-weight: 700;
   font-size: 1.2rem;
+  letter-spacing: -0.05em;
   opacity: 0;
+  color: #fffafa;
 }
 
 .pin {
   width: 1px;
   height: 50px;
-  background-color: #191a20;
+  background-color: #fffafa;
 }
 
 /* INTRODUE SECTION - 2 */
@@ -196,7 +191,7 @@ li {
 }
 
 .description {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #888;
   margin-bottom: 2rem;
 }
@@ -238,20 +233,25 @@ li {
 }
 
 .linked-content.github {
-  background-color: #8493ab;
+  background-color: rgba(132, 147, 171, 0.6);
 }
 
 .linked-content.velog {
-  background-color: #22c998;
+  background-color: rgba(34, 201, 152, 0.6);
 }
 
 .linked-content.youtube {
-  background-color: #cb5962;
+  background-color: rgba(203, 89, 98, 0.6);
 }
 
 .image-wrapper {
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
+}
+
+.linked-content.notion .image-wrapper {
+  width: 32px;
+  height: 32px;
 }
 
 .image-wrapper img {
@@ -261,11 +261,116 @@ li {
 
 .linked-in-link {
   font-size: 1.3em;
+  padding: 30px 0 30px 30px;
+}
+
+/* Contact Section */
+.contact {
+  background-color: #f2f8fa;
+  padding: 50vh 0;
+  /* TODO: 우선 패딩 50vh 로 해놨음 끝나고 10vh 로 바꾸기 */
+}
+
+.contact-image {
+  padding: 25px 0;
+}
+
+.contact-image img {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-desc {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 45px;
+}
+
+#send-form .input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+#send-form .input-group input,
+#send-form .input-group textarea {
+  width: 100%;
+  height: 48px;
+  padding: 10px 16px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+#send-form .input-group input {
+  margin-bottom: 12px;
+}
+
+#send-form .input-group textarea {
+  resize: none;
+  height: 100px;
+}
+
+#send-form .send-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: -0.05em;
+  background-color: #3040c4;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#send-form .send-button:disabled {
+  opacity: 0.4;
+  cursor: disabled;
+}
+
+#send-form .send-button:hover {
+  background-color: #232e91;
 }
 
 @media screen and (min-width: 768px) {
+  .scroll-section .title-message {
+    font-size: 12vw;
+    top: 25vh;
+  }
+
+  .title-message-left {
+    margin-right: 2rem;
+  }
+
+  .title-message-right {
+    margin-left: 2rem;
+  }
+
+  .landing-message {
+    font-size: 3rem;
+  }
+
+  .desc-message {
+    font-size: 1.5rem;
+  }
+
   .description {
     font-size: 2rem;
+    margin-bottom: 5rem;
   }
 
   .description strong {
@@ -280,6 +385,21 @@ li {
   .linked-content {
     height: 120px;
   }
+
+  .image-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .linked-content.notion .image-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+
+  .linked-in-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -292,7 +412,7 @@ li {
   }
 
   .desc-message {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     width: 50%;
   }
 
@@ -302,10 +422,21 @@ li {
   }
 
   #scroll-section-0 .desc-message.f {
-    left: 35%;
+    width: 70%;
+    left: 25%;
   }
 
   .linked-content {
     height: 180px;
+  }
+
+  .image-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .linked-content.notion .image-wrapper {
+    width: 70px;
+    height: 70px;
   }
 }

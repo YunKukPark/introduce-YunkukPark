@@ -99,8 +99,6 @@
                 및 현업에서 크고 작은 프로젝트를 도맡아 비즈니스와 소비자 모두를 위한 제품을 만들기 위해 재능 있는 사람들과 협업했습니다. 저는 배우는
                 속도가 빠르고, 계속 배우고 도전하는 것을 선호합니다. 저는 제 인생과 경력을 통해 여러 분야에서 전문성을 키우고 싶습니다. 저는 현재
                 WeCode에서 교육을 받고 있습니다. 저는 그 외에도 음악을 만들고 '항우울 Antidep.박세하' 라는 유튜브 채널을 운영하고 있습니다.
-                <br />
-                Feel free to get in touch by any means of communication.
               </p>
             </div>
           </div>
@@ -150,13 +148,36 @@
       <!-- Section 2 -->
       <section class="contact" id="scroll-section-2">
         <div class="container">
-          <div class="row"></div>
+          <div class="row align-items-center">
+            <div class="col-12 col-md-5">
+              <div class="contact-image">
+                <img src="./assets/image/gmail.png" alt="메일 이미지" />
+              </div>
+            </div>
+            <div class="col-12 col-md-7">
+              <h1 class="contact-title">Contact Now</h1>
+              <p class="contact-desc">Feel free to get in touch by any means of communication.</p>
+              <form id="send-form">
+                <div class="input-group">
+                  <input type="email" name="from_name" id="from_name" placeholder="연락받을 메일을 입력해주세요" />
+                  <textarea name="message" id="message" cols="30" rows="50" placeholder="메세지를 입력해주세요"></textarea>
+                </div>
+                <input class="send-button" type="submit" id="send-button" value="Send Email" />
+              </form>
+            </div>
+          </div>
         </div>
       </section>
       <footer class="footer">
         <p>2021, YunkukPark</p>
+        <div>
+          Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from
+          <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </div>
       </footer>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/mail.js"></script>
   </body>
 </html>
