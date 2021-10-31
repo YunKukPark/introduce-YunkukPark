@@ -402,7 +402,7 @@ body.before-load {
   cursor: not-allowed;
 }
 
-#send-form .send-button:hover {
+#send-form .send-button:hover:not(:disabled) {
   background-color: #232e91;
 }
 
