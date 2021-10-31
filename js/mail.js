@@ -22,6 +22,7 @@
       from_name: inputs.fromName.value,
     };
 
+    // TODO: 메일이 발송 되면 기존 내용 없애는 로직 추가하기
     emailjs.send(serviceID, templateID, templateParams).then(
       function (response) {
         sendButton.value = 'Send Email';

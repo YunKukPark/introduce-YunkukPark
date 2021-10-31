@@ -1,4 +1,6 @@
 (() => {
+  //TODO: scrollHeight > normal섹션 쪽에서 setLayout 함수가 잘 안먹히는 버그 수정 필요
+
   let yOffset = 0; // window page Y offset
   let prevScrollHeight = 0; // 현재 스크롤위치보다 이전에 위치한 스크롤 섹션들의 스크롤 높이 합
   let currentScene = 0; // 현재 활성화된 씬
