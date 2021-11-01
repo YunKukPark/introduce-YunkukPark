@@ -160,8 +160,6 @@ textarea:focus {
   box-shadow: none;
 }
 
-/* TODO:  1. sm-only, sm-hidden, lg-only, lg-hidden 등만들기 */
-
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
