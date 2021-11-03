@@ -1,14 +1,27 @@
 > WeCode 사전스터디 개인페이지 만들기 PJ
 
-# 초안
+# TOC
 
-TODO: 노트에 그린 초안 사진 집어 넣기
+1. [HELLO, WORLD](#hello,-world)
+2. [🎉 초안](#🎉-초안)
+3. [🌁 배경](#🌁-배경)
+4. [🛠 구현 컨셉](#🛠-구현-컨셉)
+5. [🩹 TODOs](#🩹-TODOs)
+6. [🔭 마치며](#🔭-마치며)
 
-# 배경
+# HELLO, WORLD
+
+https://yunkukpark.github.io/introduce-YunkukPark/
+
+# 🎉 초안
+
+<img width="486" alt="스크린샷 2021-11-03 오후 6 43 28" src="https://user-images.githubusercontent.com/53929065/140038361-52353c76-338b-44c1-959e-ae210457af49.png">
+
+# 🌁 배경
 
 WeCode 사전 스터디 과제로 자기소개 페이지 제출이 있었는데, 예전에 공부했던 1분코딩의 애플 클론코딩을 복습 할 겸, 인터랙티브 요소 개발에 평소 흥미도 있어서 자기소개 페이지를 다음과 같이 기획 했다.
 
-# 구현 컨셉
+# 🛠 구현 컨셉
 
 ## Ⅰ. Scroll Animation Section
 
@@ -20,7 +33,7 @@ const sceneInfo = [
       // 0 - Landing Section
       idx: 0,
       type: 'sticky',
-      heightNum: 15, // 브라우저 높이의 5배로 scrollHeight 세팅
+      heightNum: 15, // 브라우저 높이의 15배로 scrollHeight 세팅
       scrollHeight: 0,
       objs: {
         container: document.querySelector('#scroll-section-0'),
@@ -95,7 +108,7 @@ function calcValues(values, currentYOffset) {
 현재 내가 보고 있는 Section 안에서 스크롤된 범위를 구하고,
 SceneInfo의 values의 값을 scrollRatio와 연산하여 return 한다.
 
-TODO: 노트 캡쳐한 사진 집어 넣기
+<img width="486" alt="스크린샷 2021-11-03 오후 6 44 56" src="https://user-images.githubusercontent.com/53929065/140038549-cfcfb8b5-49e3-42ed-870b-70131bf3945e.png">
 
 ### 2. Video Play
 
@@ -189,20 +202,20 @@ emailjs.send(serviceID, templateID, templateParams).then(
 );
 ```
 
-# TODOs
+# 🩹 TODOs
 
 ## index.js
 
-[] scrollHeight > normal섹션 쪽에서 setLayout 함수가 잘 안먹히는 버그 수정 필요  
-[] `function playAnimation()` 같은 동작을 하는게 여러개니까 argument를 받아 뱉어주는 함수 만들기  
-[] `eventlinster(load, setLayout)` 시작하자 마자 이미지가 올라와야 되는데 가끔씩 스크롤해줘야만 이미지가 생성되는 버그 수정
+- [ ] scrollHeight > normal섹션 쪽에서 setLayout 함수가 잘 안먹히는 버그 수정 필요
+- [ ] `function playAnimation()` 같은 동작을 하는게 여러개니까 argument를 받아 뱉어주는 함수 만들기
+- [ ] `eventlinster(load, setLayout)` 시작하자 마자 이미지가 올라와야 되는데 가끔씩 스크롤해줘야만 이미지가 생성되는 버그 수정
 
 ## mail.js
 
-[] 메일이 발송 되면 기존 내용 없애는 로직 추가하기  
-[] 값이 0이 되었음에도 한번 더 키 입력이 되야지 disabled 되는 이슈가 있음.
+- [ ] 메일이 발송 되면 기존 내용 없애는 로직 추가하기
+- [ ] 값이 0이 되었음에도 한번 더 키 입력이 되야지 disabled 되는 이슈가 있음.
 
-# 마치며
+# 🔭 마치며
 
 인터랙티브 웹개발은 생각보다 어려웠다.  
 ScrollHeight 연산을 통해 비디오, 텍스트를 제어해줘야 했으며, 각 씬의 type / 씬안에서도 메세지텍스트 마다 설정값이 다르기에 예상치 못한 곳에서 레이아웃이 어긋나는 상황도 많았다.  
